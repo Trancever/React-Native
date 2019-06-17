@@ -24,6 +24,7 @@
 #import "RCTUnimplementedNativeComponentView.h"
 #import "RCTViewComponentView.h"
 #import "RNPullToRefreshViewComponentView.h"
+#import "RCTProgressViewComponentView.h"
 
 using namespace facebook::react;
 
@@ -47,6 +48,7 @@ using namespace facebook::react;
   [componentViewFactory registerComponentViewClass:[RCTSliderComponentView class]];
   [componentViewFactory registerComponentViewClass:[RCTSwitchComponentView class]];
   [componentViewFactory registerComponentViewClass:[RCTUnimplementedNativeComponentView class]];
+  [componentViewFactory registerComponentViewClass:[RCTProgressViewComponentView class]];
 
   return componentViewFactory;
 }

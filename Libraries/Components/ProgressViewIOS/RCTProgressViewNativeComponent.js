@@ -12,7 +12,7 @@
 
 const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
 
-import type {NativeComponent} from '../../Renderer/shims/ReactNative';
+import type {CodegenNativeComponent} from '../../Types/CodegenTypes';
 import type {ImageSource} from '../../Image/ImageSource';
 import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';
 import type {ViewProps} from '../View/ViewPropTypes';
@@ -27,8 +27,16 @@ type NativeProps = $ReadOnly<{|
   trackImage?: ?ImageSource,
 |}>;
 
-type NativeProgressViewIOS = Class<NativeComponent<NativeProps>>;
+type Options = {
+  isDeprecatedPaperComponentNameRCT: true,
+};
+
+type ProgressViewNativeType = CodegenNativeComponent<
+  'ProgressView',
+  NativeProps,
+  Options,
+>;
 
 module.exports = ((requireNativeComponent(
   'RCTProgressView',
-): any): NativeProgressViewIOS);
+): any): ProgressViewNativeType);
